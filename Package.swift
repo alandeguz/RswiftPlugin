@@ -7,7 +7,7 @@ let package = Package(
   name: "RswiftPlugin",
   platforms: [ .macOS(.v10_15) ],
   products: [
-    .plugin(name: "Rswift", targets: ["RswiftPlugin"])
+    .plugin(name: "RswiftExec", targets: ["RswiftPlugin"])
   ],
   targets: [
     .plugin(
