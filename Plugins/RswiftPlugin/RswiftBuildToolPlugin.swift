@@ -40,6 +40,11 @@ extension RswiftBuildToolPlugin: XcodeBuildToolPlugin {
   func createBuildCommands(context: XcodePluginContext, target: XcodeTarget) throws -> [Command] {
     let configPath = context.xcodeProject.directory.appending(subpath: Const.configFileName)
     let config = try Config.parseConfig(configPath.string)
+    print("projectFilePath = \(config.projectFilePath)")
+    print("rGeneratedFilePath = \(config.rGeneratedFilePath)")
+    print("PROJECT_FILE_PATH = \(context.xcodeProject.directory.appending(subpath: config.projectFilePath).string)")
+    print("SOURCE_ROOT = \(context.xcodeProject.directory.string)")
+    print("TARGET_NAME = \(target.displayName)")
     
     return [
       .prebuildCommand(
