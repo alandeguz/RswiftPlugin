@@ -16,7 +16,7 @@ let package = Package(
       dependencies: ["RswiftBinary"]),
     .binaryTarget(
       name: "RswiftBinary",
-      url: "https://github.com/alandeguz/swift-build-tools/releases/download/1.0.4/RswiftBinary-macos.artifactbundle.zip",
-      checksum: "274eae6001e6649dd70a7bef6aa60b01bd9000c223d53560352d6ad591b6a874")
+      url: "https://github.com/alandeguz/swift-build-tools/releases/download/1.0.3/RswiftBinary-macos.artifactbundle.zip",
+      checksum: "ca5adb220bd6674a6664d1a39b67e6e139603db50d2ac4960ac3789704c04a41")
   ]
 )
