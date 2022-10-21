@@ -59,6 +59,7 @@ extension RswiftBuildToolPlugin: XcodeBuildToolPlugin {
           "TARGET_NAME": target.displayName,
           "PRODUCT_BUNDLE_IDENTIFIER": config.productBundleIdentifier,
           "PRODUCT_MODULE_NAME": target.displayName,
+          "BUILT_PRODUCTS_DIR": context.xcodeProject.directory,
         ],
         outputFilesDirectory: context.pluginWorkDirectory
       )
