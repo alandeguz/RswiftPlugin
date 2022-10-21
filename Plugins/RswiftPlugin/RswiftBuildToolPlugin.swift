@@ -59,10 +59,10 @@ extension RswiftBuildToolPlugin: XcodeBuildToolPlugin {
           "TARGET_NAME": target.displayName,
           "PRODUCT_BUNDLE_IDENTIFIER": config.productBundleIdentifier,
           "PRODUCT_MODULE_NAME": config.productModuleName,
-          "BUILT_PRODUCTS_DIR": config.buildProductsDir,
+          "BUILT_PRODUCTS_DIR": config.builtProductsDir,
           "DEVELOPER_DIR": config.developerDir,
-          
-
+          "SDKROOT": config.sdkroot,
+      
         ],
         outputFilesDirectory: context.pluginWorkDirectory
       )
@@ -77,8 +77,9 @@ struct Config: Codable {
   let rGeneratedFilePath: String
   let productBundleIdentifier: String
   let productModuleName: String
-  let buildProductsDir: String
+  let builtProductsDir: String
   let developerDir: String
+  let sdkroot: String
   
   static func parseConfig(_ path: String) throws -> Config  {
     guard let file = FileManager.default.contents(atPath: path) else {
