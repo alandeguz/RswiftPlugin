@@ -57,7 +57,8 @@ extension RswiftBuildToolPlugin: XcodeBuildToolPlugin {
           "PROJECT_FILE_PATH": context.xcodeProject.directory.appending(subpath: config.projectFilePath).string,
           "SOURCE_ROOT": context.xcodeProject.directory.string,
           "TARGET_NAME": target.displayName,
-          "PRODUCT_BUNDLE_IDENTIFIER": config.productBundleIdentifier
+          "PRODUCT_BUNDLE_IDENTIFIER": config.productBundleIdentifier,
+          "PRODUCT_MODULE_NAME": target.displayName,
         ],
         outputFilesDirectory: context.pluginWorkDirectory
       )
