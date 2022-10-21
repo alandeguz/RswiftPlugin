@@ -56,7 +56,8 @@ extension RswiftBuildToolPlugin: XcodeBuildToolPlugin {
         environment: [
           "PROJECT_FILE_PATH": context.xcodeProject.directory.appending(subpath: config.projectFilePath).string,
           "SOURCE_ROOT": context.xcodeProject.directory.string,
-          "TARGET_NAME": target.displayName
+          "TARGET_NAME": target.displayName,
+          "PRODUCT_BUNDLE_IDENTIFIER": config.productBundleIdentifier
         ],
         outputFilesDirectory: context.pluginWorkDirectory
       )
@@ -69,6 +70,7 @@ extension RswiftBuildToolPlugin: XcodeBuildToolPlugin {
 struct Config: Codable {
   let projectFilePath: String
   let rGeneratedFilePath: String
+  let productBundleIdentifier: String
   
   static func parseConfig(_ path: String) throws -> Config  {
     guard let file = FileManager.default.contents(atPath: path) else {
@@ -77,3 +79,5 @@ struct Config: Codable {
     return try PropertyListDecoder().decode(Config.self, from: file)
   }
 }
+
+
