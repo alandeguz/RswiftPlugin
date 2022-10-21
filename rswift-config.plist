@@ -6,7 +6,5 @@
 	<string>ExampleApp.xcodeproj</string>
 	<key>rGeneratedFilePath</key>
 	<string>R.generated.swift</string>
-	<key>productBundleIdentifier</key>
-	<string>com.example.ExampleApp</string>
 </dict>
 </plist>
